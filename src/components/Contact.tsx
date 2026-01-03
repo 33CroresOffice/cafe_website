@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 interface CafeInfo {
   name: string;
-  location?: string;
-  phone?: string;
-  email?: string;
-  opening_hours?: string;
+  location: string;
+  phone: string;
+  email: string;
+  opening_hours: string;
 }
 
 export default function Contact({ cafeInfo }: { cafeInfo: CafeInfo | null }) {
@@ -21,10 +21,10 @@ export default function Contact({ cafeInfo }: { cafeInfo: CafeInfo | null }) {
   };
 
   const contactItems = [
-    { icon: MapPin, label: 'Location', value: cafeInfo?.location || 'Bhubaneswar, Odisha' },
-    { icon: Phone, label: 'Phone', value: cafeInfo?.phone || '+91 98765 43210', href: `tel:${cafeInfo?.phone}` },
-    { icon: Mail, label: 'Email', value: cafeInfo?.email || 'hello@blueberrycafe.com', href: `mailto:${cafeInfo?.email}` },
-    { icon: Clock, label: 'Hours', value: cafeInfo?.opening_hours || 'Mon-Sun: 8:00 AM - 10:00 PM' },
+    { icon: MapPin, label: 'Location', value: cafeInfo?.location },
+    { icon: Phone, label: 'Phone', value: cafeInfo?.phone, href: `tel:${cafeInfo?.phone}` },
+    { icon: Mail, label: 'Email', value: cafeInfo?.email, href: `mailto:${cafeInfo?.email}` },
+    { icon: Clock, label: 'Hours', value: cafeInfo?.opening_hours },
   ];
 
   return (
